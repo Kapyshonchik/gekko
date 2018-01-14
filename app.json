@@ -1,0 +1,45 @@
+{
+  "name": "gekko",
+  "scripts": {
+  },
+  "env": {
+    "CLOUDKARAFKA_BROKERS": {
+      "required": true
+    },
+    "CLOUDKARAFKA_CA": {
+      "required": true
+    },
+    "CLOUDKARAFKA_CERT": {
+      "required": true
+    },
+    "CLOUDKARAFKA_PASSWORD": {
+      "required": true
+    },
+    "CLOUDKARAFKA_PRIVATE_KEY": {
+      "required": true
+    },
+    "CLOUDKARAFKA_TOPIC_PREFIX": {
+      "required": true
+    },
+    "CLOUDKARAFKA_USERNAME": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "cloudkarafka",
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
